@@ -16,7 +16,7 @@
 </header>
 <section>
     <p>Program liczy pole trójkąta za pomocą wzoru Herona</p>
-    <form action="z06w.php" method="post">
+    <form action="<?php $_SERVER['PHP_SELF']?>" method="post">
         <label for="val-1">a:</label>
         <input type="number" step="any" id="val-1" name="val-1">
 
@@ -29,5 +29,30 @@
         <input type="submit" value="Wyślij">
     </form>
 </section>
+
+<?php
+if($_SERVER['REQUEST_METHOD']=='POST'){
+    $a = $_POST['val-1'];
+    $b = $_POST['val-2'];
+    $c = $_POST['val-3'];
+
+    if($a + $b > $c && $b + $c > $a && $c + $a > $b){
+        $p = ($a+$b+$c)/2;
+        $pole = sqrt($p*($p-$a)*($p-$b)*($p-$c));
+        echo "<h3>a: $a</h3>";
+        echo "<h3>b: $b</h3>";
+        echo "<h3>b: $c</h3>";
+        echo "<h2>Pole: $pole</h2>";
+    }
+    else{
+        echo "<h3>a: $a</h3>";
+        echo "<h3>b: $b</h3>";
+        echo "<h3>b: $c</h3>";
+        echo "<h2>Nie można zbudować trójkąta z takich boków</h2>";
+    }
+}
+
+?>
+
 </body>
 </html>

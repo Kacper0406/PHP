@@ -16,12 +16,24 @@
 </header>
 <section>
     <p>Napisz program, który zamienia długość podaną w calach na mm. (1cal=25,3995 mm)</p>
-    <form action="z09w.php" method="post">
+    <form action="<?php $_SERVER['PHP_SELF']?>" method="post">
         <label for="val-1">Długość w calach:</label>
-        <input type="number" step="any" id="val-1" name="val-1">
+        <input type="text" step="any" id="val-1" name="val-1">
 
         <input type="submit" value="Wyślij">
     </form>
 </section>
+
+<?php
+if($_SERVER['REQUEST_METHOD']=='POST'){
+    if($_POST['val-1'] != ""){
+        $input = (float )$_POST['val-1'];
+        $wynik = $input * 25.3995;
+
+        echo "<h2>$input cali to $wynik mm</h2>";
+    }
+}
+?>
+
 </body>
 </html>

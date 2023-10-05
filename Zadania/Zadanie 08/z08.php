@@ -16,12 +16,25 @@
 </header>
 <section>
     <p>Napisz program, który przelicza czas podany w sekundach na zapis uwzględniający godziny, minuty oraz sekundy. Program zadziała dla s większego od 0. Przykład: dla s = 4000 wynikiem powinien być ciąg znaków : 1g6m40s</p>
-    <form action="z08w.php" method="post">
+    <form action="<?php $_SERVER['PHP_SELF']?>" method="post">
         <label for="val-1">podaj ilość sekund s</label>
         <input type="number" step="any" id="val-1" name="val-1">
 
         <input type="submit" value="Wyślij">
     </form>
 </section>
+
+<?php
+if($_SERVER['REQUEST_METHOD']=='POST'){
+    if($_POST['val-1'] != ""){
+        $sek = $_POST['val-1'] % 60;
+        $min = floor( ($_POST['val-1'] % 3600) / 60 );
+        $h = floor($_POST['val-1'] / 3600);
+        echo "<h2>$h g $min m $sek s";
+    }
+}
+
+?>
+
 </body>
 </html>

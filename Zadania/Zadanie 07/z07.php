@@ -16,12 +16,29 @@
 </header>
 <section>
     <p>Napisz program, który dla podanej temperatury w stopniach Celsjusza zamienia ją na stopnie Kelwina i Fahrenheita.</p>
-    <form action="z07w.php" method="post">
-        <label for="val-1">podaj temperaturę w <sup>o</sup>C</label>
-        <input type="number" step="any" id="val-1" name="val-1">
+    <form action="<?php $_SERVER['PHP_SELF']?>" method="post">
+        <label for="value">podaj temperaturę w <sup>o</sup>C</label>
+        <input type="number" step="any" id="value" name="value">
 
         <input type="submit" value="Wyślij">
     </form>
 </section>
+
+<?php
+if($_SERVER['REQUEST_METHOD']=='POST'){
+    if($_POST['value'] != "") {
+
+        $celsjusz = $_POST['value'];
+        $kelwin = $celsjusz + 273.15;
+        $fahrenheit = ($celsjusz * 1.8) + 32;
+
+        echo "<h2>Wyniki obliczeń dla T<sub>Celsjusz</sub> =  $celsjusz <sup>o</sup>C";
+        echo "<h2>Wyniki obliczeń dla T<sub>Kelvin</sub> =  $kelwin K";
+        echo "<h2>Wyniki obliczeń dla T<sub>Fahrenheit</sub> =  $fahrenheit <sup>o</sup>F";
+    }
+}
+
+?>
+
 </body>
 </html>

@@ -3,25 +3,58 @@
 }
 
 body{
-    background-color: rgb(45, 56, 87);
-    margin: 10px;
+    background-color: rgb(252, 252, 252);
+    margin: 0;
+    padding: 2rem 5rem;
 }
 
-h1{
-    color: white;
+header{
+    background: #cff4fc;
+    border: #55d5d1 dotted 2px;
+    border-radius: 5px;
+    padding: 20px;
 }
-h2{
-    color: rgba(255, 255, 255, 0.884);
-    font-weight: 500;
+
+header h1{
+    color: #055160;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
 }
-h3{
-    color: rgba(255, 255, 255, 0.726);
-    font-weight: 300;
+
+header h2{
+    color: #91a4ad;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
 }
-label{
-    color: rgba(255, 255, 255, 0.726);
-    font-weight: 300;
+
+header p{
+    color: #055160;
 }
-p{
-    color: white;
+
+section{
+    background: #cff4fc;
+    border: #55d5d1 dotted 2px;
+    border-radius: 5px;
+    padding: 20px;
+    border-collapse: collapse;
+}
+
+section h1{
+    color: #055160;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+}
+
+section h2{
+    color: #91a4ad;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+
+section p{
+    color: #055160;
 }
