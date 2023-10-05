@@ -14,26 +14,31 @@
     <p>Napisz program, który dla czterech liczb rzeczywistych oblicza i wyświetla ich średnią arytmetyczną. WYnik wyświetl w dwóch postaciach. Bez zaokrąglenia oraz z zaokrągleniem do trzech miejsc po przecinku.</p>
 </header>
 
-<section>
+<form id="produkty">
+    <div class="produkt">
+        <img src="img/chleb.png" alt="chleb">
+        <p>Bochenek chleba</p>
+        <input type="number">
+    </div>
 
-</section>
+    <div class="produkt">
+        <img src="img/bulka.png" alt="bułka">
+        <p>Bułka piastowska</p>
+        <input type="number">
+    </div>
+
+    <div class="produkt">
+        <img src="img/paczek.png" alt="pączek">
+        <p>Pączek</p>
+        <input type="number">
+    </div>
+
+    <input type="submit" value="Zamów">
+</form>
 
 <?php
 if($_SERVER['REQUEST_METHOD']=='POST'){
-    $val1 = $_POST['val-1'];
-    $val2 = $_POST['val-2'];
-    $val3 = $_POST['val-3'];
-    $val4 = $_POST['val-4'];
 
-    $wynik = ($val1 + $val2 + $val3 + $val4) / 4;
-    $rounded = round($wynik);
-
-    echo "<h3>a: $val1</h3>";
-    echo "<h3>b: $val2</h3>";
-    echo "<h3>c: $val3</h3>";
-    echo "<h3>d: $val4</h3>";
-    echo "<h2><b>Średnia: $wynik<b></h2>";
-    echo "<h2><b>Średnia zaokrąglona: $rounded<b></h2>";
 }
 ?>
 </body>

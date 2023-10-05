@@ -1,0 +1,33 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    margin: 0;
+    background: aliceblue;
+    padding: 0 2rem;
+}
+
+.produkt{
+    width: 450px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.produkt img{
+    width: 100px;
+    height: 100px;
+}
+
+.produkt p{
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.produkt input{
+    width: 80px;
+    height: 40px;
+    font-size: 24px;
+}
