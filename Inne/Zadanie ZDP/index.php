@@ -9,27 +9,36 @@
 </head>
 <body>
 <header>
-    <h1></h1>
-    <h2>Autor: Kacper Zając</h2>
-    <p>Napisz program, który dla czterech liczb rzeczywistych oblicza i wyświetla ich średnią arytmetyczną. WYnik wyświetl w dwóch postaciach. Bez zaokrąglenia oraz z zaokrągleniem do trzech miejsc po przecinku.</p>
+    <h1>Piekarnia Pawełek</h1>
+    <h4>Autor: Kacper Zając</h4>
 </header>
 
 <form id="produkty">
     <div class="produkt">
         <img src="img/chleb.png" alt="chleb">
-        <p>Bochenek chleba</p>
+        <div class="produkt-header">
+            <p>Bochenek chleba</p>
+            <span>(0.23zł szt.)</span>
+        </div>
+
         <input type="number">
     </div>
 
     <div class="produkt">
         <img src="img/bulka.png" alt="bułka">
-        <p>Bułka piastowska</p>
+        <div class="produkt-header">
+            <p>Bułka piastowska</p>
+            <span>(0.23zł szt.)</span>
+        </div>
         <input type="number">
     </div>
 
     <div class="produkt">
         <img src="img/paczek.png" alt="pączek">
-        <p>Pączek</p>
+        <div class="produkt-header">
+            <p>Pączek</p>
+            <span>(0.23zł szt.)</span>
+        </div>
         <input type="number">
     </div>
 

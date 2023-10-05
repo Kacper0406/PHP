@@ -8,8 +8,16 @@ body{
     padding: 0 2rem;
 }
 
+#produkty{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
 .produkt{
-    width: 450px;
+    width: 550px;
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -26,8 +34,27 @@ body{
     font-weight: 500;
 }
 
-.produkt input{
+.produkt .produkt-header{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.produkt input[type="number"]{
     width: 80px;
     height: 40px;
     font-size: 24px;
+}
+
+input[type="submit"]{
+    background: dodgerblue;
+    width: 8rem;
+    height: 3rem;
+    border: none;
+    border-radius: 10px;
+}
+
+input[type="submit"]:hover{
+    filter: brightness(1.1);
+    cursor: pointer;
 }
