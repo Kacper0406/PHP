@@ -68,6 +68,14 @@ input[type="submit"]:hover{
     cursor: pointer;
 }
 
+#summary{
+    padding-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 footer{
     margin-top: 5.2rem;
     height: 5rem;
@@ -76,4 +84,12 @@ footer{
     align-items: center;
     color: white;
     background: #a3542e;
+}
+
+th, td{
+    padding: 1rem 2rem;
+}
+
+table, th, td {
+    border:1px solid black;
 }

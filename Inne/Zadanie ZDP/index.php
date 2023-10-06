@@ -1,3 +1,8 @@
+<?php
+    $cena_chleb = 6.20;
+    $cena_bulka = 0.75;
+    $cena_paczek = 2.50;
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -44,11 +49,44 @@
     <input type="submit" value="Zamów">
 </form>
 
+<section id="summary">
+    <h1>Podsumowanie zamówienia</h1>
+
+    <table>
+        <tr>
+            <th>Produkt</th>
+            <th>Ilość</th>
+            <th>Cena</th>
+            <th>Suma</th>
+        </tr>
+        <tr>
+            <td>Chleb</td>
+            <td>2x</td>
+            <td><?php echo "$cena_chleb zł"?></td>
+            <td>12.90zł</td>
+        </tr>
+        <tr>
+            <td>Bułka</td>
+            <td>6x</td>
+            <td>0.53zł</td>
+            <td>3.18zł</td>
+        </tr>
+        <tr>
+            <td>Pączek</td>
+            <td>4x</td>
+            <td>2.50zł</td>
+            <td>10.00zł</td>
+        </tr>
+    </table>
+</section>
+
 <footer>
     <h4>Autor: Kacper Zając</h4>
 </footer>
 
 <?php
+
+
 if($_SERVER['REQUEST_METHOD']=='POST'){
 
 }
