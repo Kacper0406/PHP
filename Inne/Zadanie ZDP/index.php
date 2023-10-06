@@ -9,8 +9,7 @@
 </head>
 <body>
 <header>
-    <h1>Piekarnia Pawełek</h1>
-    <h4>Autor: Kacper Zając</h4>
+    <img src="img/logo.png" alt="Logo" class="logo">
 </header>
 
 <form id="produkty">
@@ -21,7 +20,7 @@
             <span>(0.23zł szt.)</span>
         </div>
 
-        <input type="number">
+        <input type="number" min="0">
     </div>
 
     <div class="produkt">
@@ -30,7 +29,7 @@
             <p>Bułka piastowska</p>
             <span>(0.23zł szt.)</span>
         </div>
-        <input type="number">
+        <input type="number" min="0">
     </div>
 
     <div class="produkt">
@@ -39,11 +38,15 @@
             <p>Pączek</p>
             <span>(0.23zł szt.)</span>
         </div>
-        <input type="number">
+        <input type="number" min="0">
     </div>
 
     <input type="submit" value="Zamów">
 </form>
+
+<footer>
+    <h4>Autor: Kacper Zając</h4>
+</footer>
 
 <?php
 if($_SERVER['REQUEST_METHOD']=='POST'){
