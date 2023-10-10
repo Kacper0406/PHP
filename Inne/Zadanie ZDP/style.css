@@ -5,7 +5,6 @@
 body{
     margin: 0;
     background: aliceblue;
-    /*padding: 0 2rem;*/
 }
 
 header{
@@ -110,5 +109,9 @@ table, th, td {
     border: 2px solid #a3542e;
     border-collapse: collapse;
     padding: 1rem 2rem;
+    text-align: center;
+}
+
+.promka-info{
     text-align: center;
 }

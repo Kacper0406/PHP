@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-    <img src="img/logo.png" alt="Logo" class="logo">
+    <img draggable="false" src="img/logo.png" alt="Logo" class="logo">
     <marquee>
         <p>Promocja na pączki – co trzeci zamówiony pączek jest darmowy.⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀Promocja 10% na wszystko - jeśli ilość produktów jest liczbą pierwszą</p>
     </marquee>
@@ -17,29 +17,29 @@
 
 <form action="<?php $_SERVER['PHP_SELF']?>" method="post" id="produkty" >
     <div class="produkt">
-        <img src="img/chleb.png" alt="chleb">
+        <img draggable="false" src="img/chleb.png" alt="chleb">
         <div class="produkt-header">
             <p>Bochenek chleba</p>
-            <span>(0.23zł szt.)</span>
+            <span>(4.20zł szt.)</span>
         </div>
 
         <input type="number" min="0" name="ilosc-chleb" value="0">
     </div>
 
     <div class="produkt">
-        <img src="img/bulka.png" alt="bułka">
+        <img draggable="false" src="img/bulka.png" alt="bułka">
         <div class="produkt-header">
             <p>Bułka piastowska</p>
-            <span>(0.23zł szt.)</span>
+            <span>(0.50zł szt.)</span>
         </div>
         <input type="number" min="0" name="ilosc-bulka" value="0">
     </div>
 
     <div class="produkt">
-        <img src="img/paczek.png" alt="pączek">
+        <img draggable="false" src="img/paczek.png" alt="pączek">
         <div class="produkt-header">
             <p>Pączek</p>
-            <span>(0.23zł szt.)</span>
+            <span>(2.50zł szt.)</span>
         </div>
         <input type="number" min="0" name="ilosc-paczek" value="0">
     </div>
@@ -77,6 +77,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
     $wiek = (int) ($_POST['wiek']);
 
+    $promka_matematyczna = false;
+
     function jest_pierwsza($suma)
     {
         $n = 0;
@@ -91,9 +93,11 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         if ($n == 0){
             global $final_suma;
             global $final_promocja;
+            global $promka_matematyczna;
 
-            $final_promocja = $final_suma *= 0.1;
+            $final_promocja += $final_suma * 0.1;
             $final_suma *= 0.9;
+            $promka_matematyczna = true;
         }
     }
 
@@ -113,21 +117,21 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             <th>Suma</th>
         </tr>
         <tr>
-            <td><img src="img/chleb.png" alt="chleb"> <p>Chleb</p></td>
+            <td><img draggable="false" src="img/chleb.png" alt="chleb"> <p>Chleb</p></td>
             <td>$ilosc_chleb szt.</td>
             <td>$cena_chleb zł</td>
             <td>-$promocja_chleb zł</td>
             <td>$suma_chleb zł</td>
         </tr>
         <tr>
-            <td><img src="img/bulka.png" alt="bułka"> <p>Bułka</p></td>
+            <td><img draggable="false" src="img/bulka.png" alt="bułka"> <p>Bułka</p></td>
             <td>$ilosc_bulka szt.</td>
             <td>$cena_bulka zł</td>
             <td>-$promocja_bulka zł</td>
             <td>$suma_bulka zł</td>
         </tr>
         <tr>
-            <td><img src="img/paczek.png" alt="pączek"> <p>Pączek</p></td>
+            <td><img draggable="false" src="img/paczek.png" alt="pączek"> <p>Pączek</p></td>
             <td>$ilosc_paczek szt.</td>
             <td>$cena_paczek zł</td>
             <td>-$promocja_paczek zł</td>
@@ -151,6 +155,36 @@ END;
     }
 
     echo $SECTION;
+
+    if($promocja_paczek != 0 || $promka_matematyczna){
+        echo <<< END
+
+<div class="promka-info">
+    <h4>AKTYTWNE PROMOCJE: </h4>
+</div>
+    
+END;
+    }
+
+    if($promocja_paczek != 0){
+        echo <<< END
+
+<div class="promka-info">
+    <p>PROMOCJA NA PĄCZKI!!!!!!</p>
+</div>
+    
+END;
+    }
+
+    if($promka_matematyczna){
+        echo <<< END
+
+<div class="promka-info">
+    <p>PROMOCJA NA WSZYSTKO 10% TANIEJ!!!!!!</p>
+</div>
+    
+END;
+    }
 }
 ?>
 
