@@ -17,6 +17,17 @@ header{
     width: 8rem;
 }
 
+marquee{
+    background-color: #a3542e;
+    color: white;
+    padding: 0.3rem 0;
+}
+
+marquee p {
+    margin: 0;
+    font-weight: 700;
+}
+
 #produkty{
     display: flex;
     flex-direction: column;
@@ -86,10 +97,18 @@ footer{
     background: #a3542e;
 }
 
-th, td{
-    padding: 1rem 2rem;
+td img{
+    height: 50px;
+    width: 50px;
+}
+
+td p {
+    margin: 0;
 }
 
 table, th, td {
-    border:1px solid black;
+    border: 2px solid #a3542e;
+    border-collapse: collapse;
+    padding: 1rem 2rem;
+    text-align: center;
 }
