@@ -8,7 +8,7 @@
 <body>
 <header>
     <h1>Zadanie 01</h1>
-    <h2>Autor: Tadeusz Graczyk 3ip_2</h2>
+    <h2>Autor: Kacper Zając 3ip</h2>
     <hr>
 </header>
 <section>

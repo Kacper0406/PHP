@@ -56,6 +56,8 @@
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
 
+//    Deklaracja zmiennych
+
     $cena_chleb = 4.20;
     $ilosc_chleb = (int) $_POST['ilosc-chleb'];
     $promocja_chleb = 0;
@@ -79,6 +81,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
     $promka_matematyczna = false;
 
+//    Funkcja sprawdzająca czy podana liczba jest liczbą pierwszą
     function jest_pierwsza($suma)
     {
         $n = 0;
@@ -102,6 +105,25 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     }
 
     jest_pierwsza($final_ilosc);
+
+//    Formatowanie tekstu
+
+    $cena_chleb = number_format((float)$cena_chleb, 2, '.', '');
+    $promocja_chleb = number_format((float)$promocja_chleb, 2, '.', '');
+    $suma_chleb = number_format((float)$suma_chleb, 2, '.', '');
+
+    $cena_bulka = number_format((float)$cena_bulka, 2, '.', '');
+    $promocja_bulka = number_format((float)$promocja_bulka, 2, '.', '');
+    $suma_bulka = number_format((float)$suma_bulka, 2, '.', '');
+
+    $cena_paczek = number_format((float)$cena_paczek, 2, '.', '');
+    $promocja_paczek = number_format((float)$promocja_paczek, 2, '.', '');
+    $suma_paczek = number_format((float)$suma_paczek, 2, '.', '');
+
+    $final_promocja = number_format((float)$final_promocja, 2, '.', '');
+    $final_suma = number_format((float)$final_suma, 2, '.', '');
+
+//    Utworzenie elementów HTML
 
     $SECTION = <<< END
 
@@ -149,41 +171,54 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 END;
 
-    if($wiek < 18){
-        echo "Nie masz 18 lat!";
-        return;
-    }
+    $wiek_alert = <<< END
 
-    echo $SECTION;
+<div class="promka-info">
+    <h4>Nie masz 18 lat!</h4>
+</div>
+    
+END;
 
-    if($promocja_paczek != 0 || $promka_matematyczna){
-        echo <<< END
+    $info_promocje = <<< END
 
 <div class="promka-info">
     <h4>AKTYTWNE PROMOCJE: </h4>
 </div>
     
 END;
-    }
 
-    if($promocja_paczek != 0){
-        echo <<< END
+    $info_promocja_paczki = <<< END
 
 <div class="promka-info">
-    <p>PROMOCJA NA PĄCZKI!!!!!!</p>
+    <p>Co trzeci pączek jest darmowy!</p>
 </div>
     
 END;
-    }
 
-    if($promka_matematyczna){
-        echo <<< END
+    $info_promocja_matematyczna = <<< END
 
 <div class="promka-info">
-    <p>PROMOCJA NA WSZYSTKO 10% TANIEJ!!!!!!</p>
+    <p>Wszystko jest 10% taniej bo suma ilości zamówionych rzeczy jest liczbą pierwszą</p>
 </div>
     
 END;
+
+    if($wiek >= 18){
+        echo $SECTION;
+
+        if($promocja_paczek != 0 || $promka_matematyczna){
+            echo $info_promocje;
+
+            if($promocja_paczek != 0){
+                echo $info_promocja_paczki;
+            }
+
+            if($promka_matematyczna){
+                echo $info_promocja_matematyczna;
+            }
+        }
+    } else {
+        echo $wiek_alert;
     }
 }
 ?>
