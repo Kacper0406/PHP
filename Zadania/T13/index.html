@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>T312</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="padding-left: 50px">
+<header>
+    <h1>T312</h1>
+    <h2>Autor: Kacper Zając 3ir</h2>
+    <p>Zapoznaj się z rozdziałem podręcznika. Opracuj własny formularz i skrypt pobierający dane. Do wykonania zadania użyj różne komponenty formularzy. Przykładowy wygląd formularza pokazany jest na załączonej grafice.</p>
+    <hr>
+</header>
+<section>
+    <h1>Formulacz konkursu "Podrasuj swoje buty!"</h1>
+    <form action="skrypt.php" method="post">
+        <fieldset>
+            <legend>Podstawowe dane</legend>
+            <div><label>Imie i nazwisko: </label><input type="text" name="name"></div>
+            <div><label>E-mail: </label><input type="text" name="email"></div>
+            <div><label>Telefon: </label><input type="text" name="phone"></div>
+            <label>Moje buty są TAKIE stare...</label></br>
+            <textarea placeholder="Nie więcej niż 300 znaków" name="msg" maxlength="300"></textarea>
+        </fieldset>
+        <h1>Zaprojektuj własne trampki:</h1>
+        <fieldset>
+            <legend>Własny projekt butów</legend>
+            <fieldset>
+                <legend>Kolor (Wybierz jeden):</legend>
+                <div><input type="radio" name="color" id="kolor1" value="red"><label>Czerwony</label></div>
+                <div><input type="radio" name="color" id="kolor2" value="blue"><label>Niebieski</label></div>
+                <div><input type="radio" name="color" id="kolor3" value="black"><label>Czarny</label></div>
+                <div><input type="radio" name="color" id="kolor4" value="gray"><label>Srebny</label></div>
+            </fieldset>
+            <fieldset>
+                <legend>Opcje (Możesz wybrać kilka):</legend>
+                <input type="checkbox" name="features[]" value="Błyszczące sznurówki"><label>Błyszczące sznurówki</label>
+                <input type="checkbox" name="features[]" value="Metalowe logo"><label>Metalowe logo</label>
+                <input type="checkbox" name="features[]" value="Świecące podeszwy"><label>Świecące podeszwy</label>
+                <input type="checkbox" name="features[]" value="Odtwarzanie MP3"><label>Odtwarzanie MP3</label>
+            </fieldset>
+            <fieldset>
+                <legend>Rozmiar:</legend>
+                <label>Rozmiar zgodny ze standardowymi numerami butów</label>
+                <select name="size">
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                </select>
+            </fieldset>
+        </fieldset>
+        <input type="submit" value="Wyślij">
+        <input type="reset" value="Reset">
+    </form>
+</section>
+</body>
+</html>
